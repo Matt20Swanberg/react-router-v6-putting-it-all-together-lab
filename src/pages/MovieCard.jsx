@@ -1,5 +1,11 @@
 import { useOutletContext, useParams } from "react-router-dom";
 
+/**
+ * Displays details for a single movie.
+ *
+ * Uses route parameters and outlet context to locate
+ * the selected movie belonging to the current director.
+ */
 function MovieCard() {
 
   const { director } = useOutletContext();

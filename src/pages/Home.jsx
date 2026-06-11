@@ -1,5 +1,10 @@
 import NavBar from "../components/NavBar"
 
+/**
+ * Landing page for the Movie Directory application.
+ *
+ * Provides users with navigation to key application sections.
+ */
 function Home() {
   return (
     <>

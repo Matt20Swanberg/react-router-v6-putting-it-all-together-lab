@@ -1,10 +1,17 @@
 import { Link, Outlet, useOutletContext, useParams } from "react-router-dom"
 
+/**
+ * Displays details for a single director.
+ *
+ * Uses the route parameter to locate the selected director
+ * and provides that director to nested movie routes.
+ */
 function DirectorCard() {
 
     const { directors, setDirectors } = useOutletContext();
-    const { id } = useParams();
 
+    // Retrieve the director id from the URL
+    const { id } = useParams();
     const director = directors.find(director => director.id === id)
 
     if (!director) {
@@ -24,6 +31,8 @@ function DirectorCard() {
                 ))}
             </ul>
             <Link to={`movies/new`}>Add New Movie</Link>
+
+            {/* Provide director data to nested movie routes */}
             <Outlet context={{ director, setDirectors }} />
         </div>
     )

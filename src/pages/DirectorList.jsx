@@ -1,5 +1,11 @@
 import { Link, useOutletContext } from "react-router-dom";
 
+/**
+ * Displays a list of directors.
+ *
+ * Receives director data from Outlet context and renders
+ * links to individual director pages.
+ */
 const DirectorList = () => {
     // Replace me
     const { directors } = useOutletContext()

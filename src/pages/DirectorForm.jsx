@@ -1,5 +1,11 @@
 import { useState } from "react"
 
+/**
+ * Form for creating a new director.
+ *
+ * Updates application state and redirects users to the
+ * newly created director page after submission.
+ */
 function DirectorForm() {
   const [name, setName] = useState("")
   const [bio, setBio] = useState("")
@@ -8,22 +14,22 @@ function DirectorForm() {
     e.preventDefault()
     const newDirector = { name, bio, movies: [] }
     fetch("http://localhost:4000/directors", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newDirector)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newDirector)
     })
-    .then(r => {
-        if (!r.ok) { throw new Error("failed to add director")}
+      .then(r => {
+        if (!r.ok) { throw new Error("failed to add director") }
         return r.json()
-    })
-    .then(data => {
+      })
+      .then(data => {
         console.log(data)
         // handle context/state changes
         // navigate to newly created director page
-    })
-    .catch(console.log)
+      })
+      .catch(console.log)
   }
 
   return (

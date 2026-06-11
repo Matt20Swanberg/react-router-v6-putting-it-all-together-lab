@@ -2,6 +2,12 @@ import { useState } from "react"
 import { useNavigate, useOutletContext, useParams } from "react-router-dom"
 import { v4 as uuidv4 } from 'uuid'
 
+/**
+ * Form for creating a new movie.
+ *
+ * Adds a movie to the selected director, updates state,
+ * and redirects to the newly created movie page.
+ */
 function MovieForm() {
   const [title, setTitle] = useState("")
   const [time, setTime] = useState("")
@@ -41,7 +47,7 @@ function MovieForm() {
             director.id === data.id ? data : director
           )
         )
-        // navigate to newly created movie page
+        // Navigate to the newly created movie after a successful save
         navigate(`/directors/${id}/movies/${newMovie.id}`);
       })
       .catch(console.log)

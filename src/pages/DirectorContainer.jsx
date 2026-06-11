@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import { Outlet } from "react-router-dom"
 
+/**
+ * Parent route for all director-related pages.
+ *
+ * Fetches and stores director data and provides it to
+ * child routes through Outlet context.
+ */
 const DirectorContainer = () => {
     const [directors, setDirectors] = useState([])
 
@@ -20,6 +26,8 @@ const DirectorContainer = () => {
             <NavBar />
             <main>
                 <h1>Welcome to the Director's Directory!</h1>
+
+                {/* Provide director data to nested movie routes */}
                 <Outlet context={{ directors, setDirectors }} />
             </main>
         </>

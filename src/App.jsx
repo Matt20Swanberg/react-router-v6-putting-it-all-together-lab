@@ -9,6 +9,12 @@ import DirectorForm from "./pages/DirectorForm";
 import MovieCard from "./pages/MovieCard";
 import MovieForm from "./pages/MovieForm";
 
+/**
+ * Root application component.
+ *
+ * Defines all client-side routes for the Movie Directory app,
+ * including nested director and movie routes.
+ */
 const App = () => {
     return (
         <BrowserRouter>
