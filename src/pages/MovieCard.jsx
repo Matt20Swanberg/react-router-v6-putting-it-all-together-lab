@@ -1,10 +1,22 @@
+import { useOutletContext, useParams } from "react-router-dom";
 
+/**
+ * Displays details for a single movie.
+ *
+ * Uses route parameters and outlet context to locate
+ * the selected movie belonging to the current director.
+ */
 function MovieCard() {
-  // Replace director and movie
-  const director = null
+
+  const { director } = useOutletContext();
+  const { movieId } = useParams();
+
+  const movie = director.movies.find(
+    movie => movie.id === movieId
+  )
+
   if (!director) return <h2>Director not found.</h2>
-  
-  const movie = null
+
   if (!movie) return <h2>Movie not found.</h2>
 
   return (
