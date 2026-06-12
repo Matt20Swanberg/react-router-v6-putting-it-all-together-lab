@@ -7,7 +7,7 @@ import { Link, useOutletContext } from "react-router-dom";
  * links to individual director pages.
  */
 const DirectorList = () => {
-    // Replace me
+
     const { directors } = useOutletContext()
 
     const displayDirectors = directors.map((director) => (

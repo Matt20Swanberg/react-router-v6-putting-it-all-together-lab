@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
-import { Outlet } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 /**
  * Parent route for all director-related pages.
@@ -26,6 +26,8 @@ const DirectorContainer = () => {
             <NavBar />
             <main>
                 <h1>Welcome to the Director's Directory!</h1>
+
+                <Link to="new" className="btn">+ New Director</Link>
 
                 {/* Provide director data to nested movie routes */}
                 <Outlet context={{ directors, setDirectors }} />
