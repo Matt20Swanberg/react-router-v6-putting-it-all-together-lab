@@ -10,3 +10,21 @@ article {
     box-sizing: border-box;
     padding: 5px;
 }
+
+.btn {
+    display: inline-block;
+    padding: 0.50rem 0.50rem;
+    background-color: #55e745;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #55e745;
+    border-radius: 8px;
+    box-shadow: 0 2px 1px #3da131;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #8bff7e;
+    box-shadow: 0 3px 6px rgb(71, 191, 58);
+}
